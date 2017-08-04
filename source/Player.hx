@@ -51,7 +51,7 @@ class Player extends FlxSprite
 		
 			//Cap power and use that to effect the rate of decrease in health
 			cappedPower = power > 100 ? 100 : power;
-			health -= (cappedPower / 100) * (elapsed * 20);
+			health -= (cappedPower / 100) * (elapsed * 22);
 		
 			//if health is < 0 then player dies.
 			if (health < 0)

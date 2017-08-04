@@ -229,12 +229,19 @@ class PlayState extends FlxState
 					text.text = "You gave up. Fair play.";
 				else if (state == 3)
 					text.text = "You ran out of power.";
+					
+				if (miles)
+					text.text += "\nDist: " + fixedFloat(player.GetRunningDistance() / 1609.34) + " miles";
+				else
+					text.text += "\nDist: " + fixedFloat(player.GetRunningDistance()) + "m";
 			}
-			
-			if (miles)
-				text.text += "\nDist: " + fixedFloat(MarathonDistance / 1609.34) + " miles";
 			else
-				text.text += "\nDist: " + fixedFloat(MarathonDistance) + "m";
+			{
+				if (miles)
+					text.text += "\nDist: " + fixedFloat(MarathonDistance / 1609.34) + " miles";
+				else
+					text.text += "\nDist: " + fixedFloat(MarathonDistance) + "m";
+			}
 				
 			if (FlxG.keys.justPressed.R)
 			{
